@@ -18,3 +18,5 @@ After your first run, you can change spring.jpa.hibernate.ddl-auto value from cr
 And to create a jks file you can run :
 keytool -genkey -alias janblog -keyalg RSA -keystore janblog.jks -keysize 2048
 keytool -importkeystore -srckeystore janblog.jks -destkeystore janblog.jks -deststoretype pkcs12   
+
+Also you can import janBlog.postman_collection.json file to Postman for using services.
