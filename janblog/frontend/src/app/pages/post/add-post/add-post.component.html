@@ -1,0 +1,29 @@
+<!--suppress ALL -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form (ngSubmit)="publishPost()" *ngIf="!loading" [formGroup]="addPostForm" id="contactForm"
+                  name="sentMessage"
+                  novalidate>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Title</label>
+                        <input [(ngModel)]="titleText" [formControlName]="'title'"
+                               class="form-control" placeholder="Title" required type="text">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls" style="border-bottom: none;">
+                        <label>Content</label>
+                        <editor [(ngModel)]="bodyText" [formControlName]="'body'"
+                                [init]="{plugins: 'link', placeholder: 'Content', height: 500, statusbar: false}"
+                                apiKey="fhioop7url4vott04onvxx05ufh7li8zupndvudy0s35935c"></editor>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="sendMessageButton" style="margin-top: 20px;" type="submit">Post
+                </button>
+            </form>
+            <ngx-loading [show]="loading"></ngx-loading>
+        </div>
+    </div>
+</div>

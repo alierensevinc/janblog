@@ -1,0 +1,51 @@
+<!--suppress ALL -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" id="contactForm" novalidate>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Username</label>
+                        <input [formControlName]="'username'" class="form-control"
+                               data-validation-required-message="Please enter your name."
+                               id="inputEmail" placeholder="Name" required
+                               type="text">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Email</label>
+                        <input [formControlName]="'email'" class="form-control"
+                               data-validation-required-message="Please enter your email."
+                               id="inputUsername" placeholder="Email" required
+                               type="text">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Password</label>
+                        <input [formControlName]="'password'" class="form-control"
+                               data-validation-required-message="Please enter your password."
+                               id="inputPassword" placeholder="Password" required
+                               type="password">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Confirm Password</label>
+                        <input [formControlName]="'confirmPassword'" class="form-control"
+                               data-validation-required-message="Please enter your password."
+                               id="inputConfirmPassword" placeholder="Confirm Password" required
+                               type="password">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="sendMessageButton" style="margin-top: 40px;" type="submit">Send
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "ae12dea0-ef25-4480-bad6-48b5dcf0f5f9",
+		"name": "janBlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sevinc.aeren@gmail.com\",\n    \"username\": \"admin2\",\n    \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin2\",\n    \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbjIifQ.crODDjEQ-gewRpjkb97VzTQ5lVmTRCdBkj26tNWFvDgOLqVLWLpJ6iUmT7gAhNOYqq3zPNBPyNX0TMwwsrzCB-whL46tHk1AoTMYJR4FWnkXCh0ONfazqMckjDcOZdsIYPoGobu857LqI1ExkpvpjvMW57ijJ6_JWImwwZf61wE_gAzenoA43HjxTyO-ML8ANyYelVQBQ4ASdTg4zDziVKhYm-39HeaqdmQhUw5utATYn658_ffbvk-zr8q8RpIEk2O9tyCeM9sV3UHRsgDXWg2ak3me_V3hapHlrz9YJPMgod_78-gCZ1AK6R3v8Jr6lYigFqE0OpkR33ZrHMx6Eg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"janblog\",\n    \"content\": \"lorem ipsum dolor sit amet\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/posts/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostsAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/posts/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbiJ9.Sq8wsGxEkVu0015123_phbe4UjJ1_i2CKA1HGS-hkmUPpq3UEERn7XI3q6uB_pCKaeY20a7Ut9vZaIJoDYXfxd9D5iXHlSjx4t9afFXoc-pENSJNyl7aWzJSluMMmwWSAt-xE9I2kaRQGhuCXMrys-n-cKNJaqNHME0tB0O_EwSmBrsnTwby2CHT1nEkZIc_90Yx3N-aPdXPWc2VEoiRYoGjqxHa1T4Y-1sKRL9T2YOhUXJg2G-YHoACtdexv01A3dMLRuudup2BbNFMaIvr17yPoVB-xu19qi82N6OE9nVSBjUmC_BvbyKCE7crY9jX9W69sQjvrmNeRELsN6SzMg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/posts/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbiJ9.Sq8wsGxEkVu0015123_phbe4UjJ1_i2CKA1HGS-hkmUPpq3UEERn7XI3q6uB_pCKaeY20a7Ut9vZaIJoDYXfxd9D5iXHlSjx4t9afFXoc-pENSJNyl7aWzJSluMMmwWSAt-xE9I2kaRQGhuCXMrys-n-cKNJaqNHME0tB0O_EwSmBrsnTwby2CHT1nEkZIc_90Yx3N-aPdXPWc2VEoiRYoGjqxHa1T4Y-1sKRL9T2YOhUXJg2G-YHoACtdexv01A3dMLRuudup2BbNFMaIvr17yPoVB-xu19qi82N6OE9nVSBjUmC_BvbyKCE7crY9jX9W69sQjvrmNeRELsN6SzMg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"content\": \"lorem ipsum dolor sit amet23\",\n    \"title\": \"janblog2123\",\n    \"username\": \"admin\",\n    \"createdOn\": 1611931993.344000000,\n    \"updatedOn\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/posts/update/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/posts/get/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

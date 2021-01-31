@@ -1,0 +1,45 @@
+<!--suppress ALL -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="/home">JanBlog</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li *ngIf="authService.isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/add-post">Add Post</a>
+                </li>
+                <li *ngIf="authService.isAuthenticated()" class="nav-item">
+                    <a (click)="logout()" class="nav-link" href="">Logout</a>
+                </li>
+                <li *ngIf="!authService.isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li *ngIf="!authService.isAuthenticated() && registeredAccountCount < 1" class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header [ngStyle]="{'background-image': 'url(' + appService.headerImgUrl + ')'}" class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div *ngIf="!appService.isOnPost" class="site-heading">
+                    <h1>{{appService.headerTitle}}</h1>
+                    <span class="subheading">{{appService.headerSubHeading}}</span>
+                </div>
+                <div *ngIf="appService.isOnPost && appService.post !== undefined" class="post-heading">
+                    <h1>{{appService.post.title}}</h1>
+                    <span class="meta">{{appService.post.username}}
+                        on {{appService.post.createdOn| date:'dd/MM/yyyy HH:mm' : 'UTC'}}</span>
+                    <span *ngIf="getShowUpdatedOnHeader() !== 0" class="meta">
+                         updated on {{appService.post.updatedOn| date:'dd/MM/yyyy HH:mm' : 'UTC'}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

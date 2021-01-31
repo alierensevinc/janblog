@@ -1,0 +1,17 @@
+<article>
+    <div class="container">
+        <div *ngIf="post" class="row">
+            <div class="col-lg-9 col-md-10 mx-auto">
+                <blockquote [innerHTML]="post.content" class="blockquote"></blockquote>
+            </div>
+            <div *ngIf="authService.isAuthenticated()" class="col-lg-3 col-md-2 mx-auto" style="margin-top: 40px;">
+                <button (click)="editPost()" class="btn btn-warning" type="button">
+                    Edit
+                </button>
+                <button (click)="deletePost()" class="btn btn-danger" type="button">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</article>

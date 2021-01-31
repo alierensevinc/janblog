@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div *ngFor="let post of posts" class="post-preview">
+                <a href="/post/{{post.id}}">
+                    <h2 class="post-title">
+                        {{post.title}}
+                    </h2>
+                </a>
+                <p class="post-meta">Posted by
+                    {{post.username}}
+                    on {{post.createdOn| date:'dd/MM/yyyy HH:mm' : 'UTC'}}
+                    <span *ngIf="getShowUpdatedOnHeader(post) !== 0" class="meta">
+                         & updated on {{post.updatedOn | date:'dd/MM/yyyy HH:mm' : 'UTC'}}
+                    </span>
+                </p>
+            </div>
+            <div *ngIf="posts !== undefined && posts.length < 1 && authService.isAuthenticated()" style="display: flex; flex-direction: column">
+                <button (click)="addPost()" class="btn btn-outline-info" type="button">
+                    You don't have any posts<br><br> Add Post !
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
